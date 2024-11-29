@@ -1,14 +1,14 @@
-import pygame
+import pygame as pg
 import os
 import random
 
-pygame.init()
+pg.init()
 
 ## making game window
 
 width, height = 800, 600
-window = pygame.display.set_mode((width,height))
-pygame.display.set_caption("Layne Doffing Final")
+window = pg.display.set_mode((width,height))
+pg.display.set_caption("Layne Doffing Final")
 
 """loading character sprites onto screen"""
 def load_image(name, scale=1):
@@ -22,7 +22,7 @@ def load_image(name, scale=1):
 
     return image, image.get_rect()
 
-class Character(pygame.sprite.Sprite):
+class Character(pg.sprite.Sprite):
     """contains a character's name, text color, font, and sprite images"""
 
     def __innit__(self):
@@ -39,10 +39,10 @@ def main():
     game_running = True
 
     while game_running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
                 game_running == False
-                pygame.quit()
+                pg.quit()
                 break
 
 main()
